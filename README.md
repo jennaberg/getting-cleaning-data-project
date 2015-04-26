@@ -7,7 +7,7 @@ notes: in order to run this script you will have to
 1. have the data from the experiment in your working directory (that is the file named UCI HAR Dataset) and in no way altered the file structure therein) 2. have installed the packages dplyr, plyr, and matrixStats
 
 the script will output two tidy data frames: 
-*df1 has the means and standard deviations for all the measurement variables *df2 has the average measurement for each subject over their multiple trials
+* df1 has the means and standard deviations for all the measurement variables * df2 has the average measurement for each subject over their multiple trials
 
 the script produces df1 in the following fashion
  1. the script reads all of the files into R using the read.table command (both test and train)

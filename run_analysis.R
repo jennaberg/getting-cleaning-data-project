@@ -131,7 +131,7 @@ trainData$sd_body_acceleration_X<-rowSds(data.matrix(inertialBodyAccXtrain))
 
 df1<-rbind(testData, trainData)
 
-df2<-group_by(df1, subject_id, activity_type)
+df3<-group_by(df1, subject_id, activity_type)
 
-df3<-summarise_each(df2, funs(mean))
+df2<-summarise_each(df3, funs(mean))
 

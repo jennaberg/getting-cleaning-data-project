@@ -67,7 +67,7 @@ inertialBodyAccXtrain<-read.table("UCI HAR Dataset/train/Inertial Signals/body_a
 ##next i will add the columns summarizing the measurements attached to each TEST obervation
 testTrial<-rep("test", 2947)
 testData<-cbind(testSubjects, testTrial, test_activity_type)
-colnames(testData)<-c("subject id", "trial", "activity type")
+colnames(testData)<-c("subject_id", "trial", "activity_type")
 #others
 
 testData$time_mean<-rowMeans(testTimeData)
@@ -100,7 +100,7 @@ testData$sd_body_acceleration_X<-rowSds(data.matrix(inertialBodyAccXtest))
 
 trainTrial<-rep("train", 7352)
 trainData<-cbind(trainSubjects, trainTrial, train_activity_type)
-colnames(trainData)<-c("subject id", "trial", "activity type")
+colnames(trainData)<-c("subject_id", "trial", "activity_type")
 #others
 
 trainData$time_mean<-rowMeans(trainTimeData)
@@ -131,8 +131,7 @@ trainData$sd_body_acceleration_X<-rowSds(data.matrix(inertialBodyAccXtrain))
 
 df1<-rbind(testData, trainData)
 
+df2<-group_by(df1, subject_id, activity_type)
 
-##i thought about adding the read number for each subject/activity type but couldn't find a clever way of doing that
+df3<-summarise_each(df2, funs(mean))
 
-
-#next i want a tidy data set that gives the average of the measurements for each subject for each acticity 

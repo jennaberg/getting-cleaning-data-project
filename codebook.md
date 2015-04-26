@@ -6,7 +6,10 @@ output: html_document
 ---
 this codebook describes the variables that occur in the dataframes that are outputs to the R-script run_analysis.R
 
-df1 variables
+df1 and df3 variables 
+
+(note: df3 values are the aritmetic mean for all readings foreach subject for each activity type)
+
 subject id: (numeric 2-54) the idenitification code for each subject 
 trial: (character: test train) variable indicates if observation occurred in test group or in training group
 activity type: (factor, levels: walking, walking upstairs, walking downstairs, sitting, standing, laying)
@@ -57,3 +60,6 @@ mean_body_acceleration_X: (numeric) arithmetic mean of the measurements of the X
           measured (body body reading)
 sd_body_acceleration_X: (numeric) standard deviation of the measurements of the X-axis across the time 
           intervals measured (gyroscope reading) 
+
+
+
